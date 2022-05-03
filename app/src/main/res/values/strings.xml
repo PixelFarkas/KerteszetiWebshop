@@ -1,0 +1,102 @@
+<resources>
+    <string name="app_name">Kerteszeti Webshop</string>
+    <string name="name">Név</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="registration">Regisztráció</string>
+    <string name="user_name">Felhasználónév</string>
+    <string name="email_address">E-mail cím</string>
+    <string name="password_again">Jelszó megerősítése</string>
+    <string name="cancel">Mégse</string>
+    <string name="phone_number">Telefonszám</string>
+    <string name="address">Cím</string>
+    <string name="account_type">Fiók típusa</string>
+    <string name="customer">Vásárló</string>
+    <string name="seller">Eladó</string>
+    <string name="product_description">Termék leírása.</string>
+
+    <string name="title_placeholder">cim</string>
+    <string name="item_placeholder">Leírás</string>
+    <string name="item_info_placeholder">Info</string>
+    <string name="subtitle_detail_text">subt</string>
+    <string name="to_cart">Kosárba</string>
+    <string name="delete">Törlés</string>
+
+    <string-array name="shopping_item_names">
+        <item>Gumikesztű</item>
+        <item>Kerámia kacsa</item>
+        <item>Kaspó</item>
+        <item>Locsoló</item>
+        <item>Madáreteő</item>
+        <item>Műfű</item>
+        <item>Palántázó</item>
+        <item>Rovarirtó</item>
+        <item>Tápoldat</item>
+        <item>Virágföld</item>
+    </string-array>
+
+    <string-array name="shopping_item_desc">
+        <item>Gumikesztű, 200 db-os csomagban</item>
+        <item>Cuki kacsa kertedbe!</item>
+        <item>Kerámia kaspó, amiben megáll a víz</item>
+        <item>5 literes locsoló</item>
+        <item>Madáretető cinegéknek</item>
+        <item>Locsolás nem igényel</item>
+        <item>Palántázó o.O</item>
+        <item>Tuti nem öli meg a virágod</item>
+        <item>Túladagolás kerülendő</item>
+        <item>Jó minőségű virágdöl</item>
+    </string-array>
+
+    <array name="termek_ertekeles">
+        <item>3.5</item>
+        <item>4</item>
+        <item>3.5</item>
+        <item>5</item>
+        <item>3</item>
+        <item>4.5</item>
+        <item>4</item>
+        <item>5</item>
+        <item>2.5</item>
+        <item>3</item>
+    </array>
+
+    <array name="shopping_item_images">
+        <item>@drawable/gumikesztyu</item>
+        <item>@drawable/kacsa</item>
+        <item>@drawable/kaspo</item>
+        <item>@drawable/locsolo</item>
+        <item>@drawable/madareteto</item>
+        <item>@drawable/mufu</item>
+        <item>@drawable/palantazo</item>
+        <item>@drawable/rovarirto</item>
+        <item>@drawable/tapoldat</item>
+        <item>@drawable/viragfold</item>
+    </array>
+
+    <array name="shopping_item_price">
+        <item>40 Dv</item>
+        <item>100 v</item>
+        <item>120 Dv</item>
+        <item>80 Dv</item>
+        <item>150 Dv</item>
+        <item>290 Dv</item>
+        <item>160 Dv</item>
+        <item>70 Dv</item>
+        <item>40 Dv</item>
+        <item>30 Dv</item>
+    </array>
+
+    <array name="shopping_item_rates">
+        <item>3.5</item>
+        <item>5</item>
+        <item>4</item>
+        <item>1.5</item>
+        <item>5</item>
+        <item>3</item>
+        <item>4.5</item>
+        <item>4</item>
+        <item>5</item>
+        <item>2.5</item>
+    </array>
+</resources>
