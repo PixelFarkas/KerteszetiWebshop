@@ -45,17 +45,22 @@ import java.util.ArrayList;
 public class ShopListActivity extends AppCompatActivity {
     private static final String LOG_TAG = ShopListActivity.class.getName();
     private FirebaseUser user;
-
     private FrameLayout redCircle;
     private TextView countTextView;
     private int cartItems = 0;
     private final int gridNumber = 1;
-    private Integer itemLimit = 5;
+    private int itemInCar=0;
+    private Integer itemLimit = 4;
     private RecyclerView mRecyclerView;
     private ArrayList<ShoppingItem> mItemsData;
     private ShoppingItemAdapter mAdapter;
     private FirebaseFirestore mFirestore;
     private CollectionReference mItems;
+    private NotificationHelper mNotificationHelper;
+    private AlarmManager mAlarmManager;
+    private JobScheduler mJobScheduler;
+    private boolean viewRow = true;
+
     BroadcastReceiver powerReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -76,11 +81,6 @@ public class ShopListActivity extends AppCompatActivity {
             }
         }
     };
-    private NotificationHelper mNotificationHelper;
-    private AlarmManager mAlarmManager;
-    private JobScheduler mJobScheduler;
-    private SharedPreferences preferences;
-    private boolean viewRow = true;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -203,9 +203,14 @@ public class ShopListActivity extends AppCompatActivity {
                 return true;
             case R.id.settings_button:
                 Log.d(LOG_TAG, "Beállítások");
+                Toast.makeText(this, "Beállítások fejlesztés alatt", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.cart:
                 Log.d(LOG_TAG, "Kosár");
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                mNotificationHelper.send(itemInCar + " terméket megrendeltél");
+                itemInCar = 0;
                 return true;
             case R.id.view_selector:
                 if (viewRow) {
@@ -242,6 +247,7 @@ public class ShopListActivity extends AppCompatActivity {
     }
 
     public void updateAlertIcon(ShoppingItem item) {
+        itemInCar+=1;
         cartItems = (cartItems + 1);
         if (0 < cartItems) {
             countTextView.setText(String.valueOf(cartItems));
@@ -254,7 +260,6 @@ public class ShopListActivity extends AppCompatActivity {
                 .addOnFailureListener(fail -> {
                     Toast.makeText(this, "Termék " + item._getId() + " nem adható a kosárhoz ", Toast.LENGTH_LONG).show();
                 });
-        mNotificationHelper.send(item.getName());
         queryData();
     }
 

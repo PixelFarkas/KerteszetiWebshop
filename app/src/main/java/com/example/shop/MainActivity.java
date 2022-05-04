@@ -35,9 +35,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         mAuth = FirebaseAuth.getInstance();
         Button anonym = findViewById(R.id.guestLoginButton);
         new GuessAsyncTask(anonym).execute();
-
     }
-
 
     public void login(View view) {
         String userEmail = emailET.getText().toString();
@@ -57,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Intent intent = new Intent(this, ShopListActivity.class);
         startActivity(intent);
     }
-
 
     public void loginAsGuest(View view) {
         mAuth.signInAnonymously().addOnCompleteListener(this, task -> {
@@ -97,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     protected void onPause() {
         super.onPause();
-
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("email", emailET.getText().toString());
         editor.putString("password", passwordET.getText().toString());

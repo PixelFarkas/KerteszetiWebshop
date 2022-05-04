@@ -25,7 +25,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     EditText passwordEditText;
     EditText passwordConfirmEditText;
     EditText phoneEditText;
-    Spinner spinner;
     RadioGroup accountTypeGroup;
     private SharedPreferences preferences;
     private FirebaseAuth mAuth;
