@@ -115,6 +115,7 @@ public class ShopListActivity extends AppCompatActivity {
         setJobScheduler();
     }
 
+//    Termékek adatainak lekérése
     private void initializeData() {
         String[] itemsList = getResources()
                 .getStringArray(R.array.shopping_item_names);
@@ -154,6 +155,7 @@ public class ShopListActivity extends AppCompatActivity {
                 });
     }
 
+//    Termékek törlése
     public void deleteItem(ShoppingItem item) {
         DocumentReference ref = mItems.document(item._getId());
         ref.delete()
@@ -190,6 +192,7 @@ public class ShopListActivity extends AppCompatActivity {
         return true;
     }
 
+//    Menügombok kezelése
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -226,6 +229,7 @@ public class ShopListActivity extends AppCompatActivity {
         }
     }
 
+//    Rácsos és egytermékes nézet állítása
     private void changeSpanCount(MenuItem item, int drawableId, int spanCount) {
         viewRow = !viewRow;
         item.setIcon(drawableId);
@@ -248,6 +252,7 @@ public class ShopListActivity extends AppCompatActivity {
         return super.onPrepareOptionsMenu(menu);
     }
 
+//    Kosárban lévő termékek számának frissítése, frissíti az adatbázisban is
     public void updateAlertIcon(ShoppingItem item) {
         itemInCar += 1;
         cartItems = (cartItems + 1);
@@ -271,6 +276,8 @@ public class ShopListActivity extends AppCompatActivity {
         unregisterReceiver(powerReceiver);
     }
 
+
+//    Ébresztő
     private void setAlarmManager() {
         long repeatInterval = 60000;
         long triggerTime = SystemClock.elapsedRealtime() + repeatInterval;

@@ -22,6 +22,8 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
     private final ArrayList<ShoppingItem> mSoppingDataAll;
     private final Context mContext;
     private ArrayList<ShoppingItem> mShoppingData;
+
+//    Kereső név alapján
     private final Filter shoppingFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
@@ -67,6 +69,7 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
                 .inflate(R.layout.list_item, parent, false));
     }
 
+//    Animációk
     @Override
     public void onBindViewHolder(ShoppingItemAdapter.ViewHolder holder, int position) {
         ShoppingItem currentItem = mShoppingData.get(position);

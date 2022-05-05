@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         new GuessAsyncTask(anonym).execute();
     }
 
+//    Bejelentkezés email és jelszó segítségével
     public void login(View view) {
         String userEmail = emailET.getText().toString();
         String password = passwordET.getText().toString();
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         startActivity(intent);
     }
 
+//    Bejelentekés vendégként
     public void loginAsGuest(View view) {
         mAuth.signInAnonymously().addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {

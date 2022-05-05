@@ -50,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         Log.i(LOG_TAG, "onCreate");
     }
 
+//    Regisztráció
     public void register(View view) {
         String userName = userNameEditText.getText().toString();
         String email = userEmailEditText.getText().toString();
@@ -66,7 +67,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         int id = accountTypeGroup.indexOfChild(radioButton);
         String accountType = ((RadioButton) accountTypeGroup.getChildAt(id)).getText().toString();
         Log.i(LOG_TAG, "Regisztrált: " + userName + ", e-mail: " + email);
-        // startShopping();
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
