@@ -19,10 +19,9 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapter.ViewHolder> implements Filterable {
-    private ArrayList<ShoppingItem> mShoppingData;
     private final ArrayList<ShoppingItem> mSoppingDataAll;
     private final Context mContext;
-    private int lastPosition = -1;
+    private ArrayList<ShoppingItem> mShoppingData;
     private final Filter shoppingFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
@@ -53,6 +52,7 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
             notifyDataSetChanged();
         }
     };
+    private int lastPosition = -1;
 
     ShoppingItemAdapter(Context context, ArrayList<ShoppingItem> itemsData) {
         this.mShoppingData = itemsData;
