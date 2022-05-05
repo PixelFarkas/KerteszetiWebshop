@@ -73,9 +73,15 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
         holder.bindTo(currentItem);
 
         if (holder.getAdapterPosition() > lastPosition) {
-            Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_row);
-            holder.itemView.startAnimation(animation);
-            lastPosition = holder.getAdapterPosition();
+            if(holder.getPosition() % 2 == 0) {
+                Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_row);
+                holder.itemView.startAnimation(animation);
+                lastPosition = holder.getAdapterPosition();
+            }else{
+                Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_row);
+                holder.itemView.startAnimation(animation);
+                lastPosition = holder.getAdapterPosition();
+            }
         }
     }
 
