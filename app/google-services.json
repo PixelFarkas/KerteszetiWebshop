@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "578752812717",
+    "project_id": "kereszeti-webshop",
+    "storage_bucket": "kereszeti-webshop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578752812717:android:55fbab1c4a891832359824",
+        "android_client_info": {
+          "package_name": "com.example.shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578752812717-h41ooqeij7hjpf4qh3h4raov7edfjmjb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shop",
+            "certificate_hash": "49dfc0d01901428ec3fe8ba823ae85a29b28c5de"
+          }
+        },
+        {
+          "client_id": "578752812717-c7nqpat8edchd6rakh8dhkjkl58cvbr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx603RZKjHa-0bCpHmJIGntUmOLbw9Ftc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578752812717-c7nqpat8edchd6rakh8dhkjkl58cvbr7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
